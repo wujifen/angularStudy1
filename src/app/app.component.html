@@ -1,0 +1,27 @@
+<router-outlet></router-outlet>
+<table class="table table-striped">
+  <thead>
+    <tr class="table-primary">
+      <th>序号</th>
+      <th>姓名</th>
+      <th>用户名</th>
+      <th>邮箱</th>
+      <th>性别</th>
+      <th>操作</th>
+    </tr>
+    <tr *ngFor=" let teacher of teachers; index as i ">
+      <td>{{ i+1 }}</td>
+      <td>{{ teacher.name }}</td>
+      <td>{{ teacher.username }}</td>
+      <td>{{ teacher.emeil}}</td>
+      <td *ngIf="teacher.sex; else femaleBlock">男</td>
+      <td><button class="btn btn-sm btn-danger">删除</button></td>
+    </tr>
+  </thead>
+
+</table>-
+
+<ng-template #femaleBlock>
+  <td>女</td>
+</ng-template>
+
